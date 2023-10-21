@@ -24,8 +24,8 @@ h1 {
 }
 
 .boba_cup {
-    width: 100px;
-    height: 135px;
+    width: 250px;
+    height: 250px;
 }
 
 div.mood_options img.opt {
@@ -48,7 +48,7 @@ div.mood_options img.opt {
 }
 
 .happy-text {
-    opacity: 0%;
+    opacity: 0;
 }
 
 .happy:hover, .happy:focus, .happy:active {
@@ -57,12 +57,13 @@ div.mood_options img.opt {
     transform: scale(1.1);
 }
 
+
 .content {
     background-color: #fde4cf;
 }
 
 .content:hover, .content:focus, .content:active {
-    box-shadow: 0 0 20px #fde4cfd2;
+    box-shadow: 0 0 20px #ffd2add2;
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
