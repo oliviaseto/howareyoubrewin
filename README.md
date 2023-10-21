@@ -1,2 +1,2 @@
-# howareyoubrewing
-Chrome extension to track mood
+# howareyoubrewin'
+A Chrome extension to track and journal your feelings.

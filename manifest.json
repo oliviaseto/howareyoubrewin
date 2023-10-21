@@ -1,0 +1,11 @@
+{
+    "name": "howareyoubrewin'",
+    "version": "1.0.0",
+    "description": "A Chrome extension to track and journal your feelings.",
+    "manifest_version": 1,
+    "author": "Cindy Dong, Edison Huang, and Olivia Seto", 
+    "action":{
+        "default_popup": "index.html",
+        "default_title": "howareyoubrewin'"
+    }
+}
