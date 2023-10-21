@@ -6,6 +6,7 @@ html {
 body {
     /* background-color: ; */
     text-align: center;
+    margin: 25px 25px;
 }
 
 ::-webkit-scrollbar {
@@ -17,16 +18,25 @@ div.mood_options img.opt {
     height: 30px;
 }
 
-.mood-options {
+.mood_options {
     display: grid;
+    text-align: center;
+    grid-template-columns: repeat(5, 1fr);
+    /* gap: 10px; */
 }
  
 .opt_with_text {
     display: inline-block;
-    padding: 1rem;
+    /* padding: 0.5rem; */
     vertical-align: middle;
-    text-align: justify;
-    width: 30px;
+    text-align: center;
+    /* width: 30px; */
+}
+
+.mood-text {
+    display: flex;
+    flex-direction: column;
+    margin-top: -1.5rem;
 }
 
 img:hover{
@@ -42,4 +52,8 @@ img:hover{
     height:150px;
     font-size:11pt;
     text-align: left;
+}
+
+form textarea {
+    resize: none;
 }
