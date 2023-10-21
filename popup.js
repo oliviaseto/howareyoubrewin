@@ -13,4 +13,9 @@ $(document).ready(function() {
             'height': '40px'                // Adjust the height to your desired size
         });
     });
+    $('#happy').hover(function() {
+        $('#boba_cup').attr('src', 'img/happy_boba_cup.jpg');
+      }, function() {
+        $('#boba_cup').attr('src', 'img/default.png');
+    });
 });
