@@ -1,3 +1,7 @@
+// $(document).ready(function() {
+//     alert('jQuery is working!');
+// });
+
 $(document).ready(function() {
     // Add a click event handler to the 'span' element with the class "dot content"
     $('.dot.content').click(function() {
