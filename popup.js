@@ -3,17 +3,23 @@
 // });
 
 $(document).ready(function() {
-    // Add a click event handler to the 'span' element with the class "dot content"
-    $('.dot.content').click(function() {
-        // Change the CSS properties to create the dark circle effect
-        $(this).css({
-            'background-color': 'darkgray',  // Set the background color to dark gray
-            'border-radius': '50%',          // Make it a circle with border-radius
-            'width': '40px',                // Adjust the width to your desired size
-            'height': '40px'                // Adjust the height to your desired size
-        });
+    // SELECT MOOD
+    $('.dot').click(function() {
+        $('.dot').css('border', '2px solid transparent');
+        $(this).css('border', '2px solid darkgray');
+    });
+    // remove the border when clicking off
+    $(document).click(function(event) {
+        if (!$(event.target).hasClass('dot')) {
+            $('.dot').css('border', '2px solid transparent');
+        }
+    });
+    // prevent the click event from propagating within .dot elements
+    $('.dot').click(function(event) {
+        event.stopPropagation();
     });
 
+    // HOVER OVER MOOD
     $('#happy').hover(function() {
         $('#boba_cup').attr('src', 'img/happy_boba_cup.jpg');
       }, function() {

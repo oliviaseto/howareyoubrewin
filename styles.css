@@ -43,6 +43,8 @@ div.mood_options img.opt {
     outline-color: rgb(131, 131, 131);
     outline-style: solid;
     outline-width: 1px;
+    border: 2px solid transparent; 
+    box-shadow: none;
 }
 
 .happy {
@@ -131,15 +133,6 @@ div.mood_options img.opt {
     display: flex;
     flex-direction: column;
     margin-top: -1.5rem;
-}
-
-img:hover{
-    -o-transition:.5s;
-    -ms-transition:.5s;
-    -moz-transition:.5s;
-    -webkit-transition:.5s;
-    transition:.5s;
-    box-shadow: 0 0 0 1px #b5a7a4;
 }
 
 #journal {
