@@ -59,9 +59,12 @@ div.mood_options img.opt {
     transform: scale(1.1);
 }
 
-
 .content {
     background-color: #fde4cf;
+}
+
+.content-text {
+    opacity: 0;
 }
 
 .content:hover, .content:focus, .content:active {
@@ -74,6 +77,10 @@ div.mood_options img.opt {
     background-color: #ffcfd2;
 }
 
+.tired-text {
+    opacity: 0;
+}
+
 .tired:hover, .tired:focus, .tired:active {
     box-shadow: 0 0 20px #ffcfd2d6;
     -webkit-transform: scale(1.1);
@@ -84,6 +91,10 @@ div.mood_options img.opt {
     background-color: #f1c0e8;
 }
 
+.sad-text {
+    opacity: 0;
+}
+
 .sad:hover, .sad:focus, .sad:active {
     box-shadow: 0 0 20px #f1c0e8ca;
     -webkit-transform: scale(1.1);
@@ -92,6 +103,10 @@ div.mood_options img.opt {
 
 .frustrated {
     background-color: #cfbaf0;
+}
+
+.frustrated-text {
+    opacity: 0;
 }
 
 .frustrated:hover, .frustrated:focus, .frustrated:active {

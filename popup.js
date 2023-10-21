@@ -18,8 +18,6 @@ $(document).ready(function() {
         $('#boba_cup').attr('src', 'img/happy_boba_cup.jpg');
       }, function() {
         $('#boba_cup').attr('src', 'img/sparkles.png');
-      }, function() {
-        $(".happy-text").css("opacity", 1);
       }
     );
     $('#content').hover(function() {
@@ -41,5 +39,45 @@ $(document).ready(function() {
         $('#boba_cup').attr('src', 'img/frustrated_boba_cup.jpg');
       }, function() {
         $('#boba_cup').attr('src', 'img/sparkles.png');
+    });
+
+    $("#happy").mouseover(function(){
+        $(".happy-text").css("opacity", 1);
+    });
+    
+    $("#happy").mouseout(function(){
+        $(".happy-text").css("opacity", 0);
+    });
+
+    $("#content").mouseover(function(){
+        $(".content-text").css("opacity", 1);
+    });
+    
+    $("#content").mouseout(function(){
+        $(".content-text").css("opacity", 0);
+    });
+
+    $("#tired").mouseover(function(){
+        $(".tired-text").css("opacity", 1);
+    });
+    
+    $("#tired").mouseout(function(){
+        $(".tired-text").css("opacity", 0);
+    });
+
+    $("#sad").mouseover(function(){
+        $(".sad-text").css("opacity", 1);
+    });
+    
+    $("#sad").mouseout(function(){
+        $(".sad-text").css("opacity", 0);
+    });
+
+    $("#frustrated").mouseover(function(){
+        $(".frustrated-text").css("opacity", 1);
+    });
+    
+    $("#frustrated").mouseout(function(){
+        $(".frustrated-text").css("opacity", 0);
     });
 });
