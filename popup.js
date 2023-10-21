@@ -21,28 +21,28 @@ $(document).ready(function() {
 
     // HOVER OVER MOOD
     $('#happy').hover(function() {
-        $('#boba_cup').attr('src', 'img/happy_boba_cup.jpg');
+        $('#boba_cup').attr('src', 'img/happy.png');
       }, function() {
         $('#boba_cup').attr('src', 'img/sparkles.png');
       }
     );
     $('#content').hover(function() {
-        $('#boba_cup').attr('src', 'img/content_boba_cup.jpg');
+        $('#boba_cup').attr('src', 'img/content.png');
       }, function() {
         $('#boba_cup').attr('src', 'img/sparkles.png');
     });
     $('#tired').hover(function() {
-        $('#boba_cup').attr('src', 'img/tired_boba_cup.jpg');
+        $('#boba_cup').attr('src', 'img/tired.png');
       }, function() {
         $('#boba_cup').attr('src', 'img/sparkles.png');
     });
     $('#sad').hover(function() {
-        $('#boba_cup').attr('src', 'img/sad_boba_cup.jpg');
+        $('#boba_cup').attr('src', 'img/sad.png');
       }, function() {
         $('#boba_cup').attr('src', 'img/sparkles.png');
     });
     $('#frustrated').hover(function() {
-        $('#boba_cup').attr('src', 'img/frustrated_boba_cup.jpg');
+        $('#boba_cup').attr('src', 'img/frustrated1.png');
       }, function() {
         $('#boba_cup').attr('src', 'img/sparkles.png');
     });
