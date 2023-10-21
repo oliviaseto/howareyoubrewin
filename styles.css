@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Playpen+Sans:wght@400&display=swap');
+
 html {
     width: 400px;
     height: 580px;
@@ -6,11 +9,23 @@ html {
 body {
     /* background-color: ; */
     text-align: center;
-    margin: 25px 25px;
+    margin: 30px 25px;
+    font-family: "Playpen Sans", sans-serif;
+    
 }
 
 ::-webkit-scrollbar {
     display: none;
+}
+
+
+h1 {
+    font-family: "Pacifico", sans-serif;
+}
+
+.boba_cup {
+    width: 200px;
+    height: 200px;
 }
 
 div.mood_options img.opt {
