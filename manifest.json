@@ -3,17 +3,16 @@
     "version": "1.0.0",
     "description": "A Chrome extension to track and journal your feelings.",
     "manifest_version": 3,
-    "author": "Cindy Dong, Edison Huang, and Olivia Seto", 
-    "action":{
-        "default_icon": {
-            "16": "img/icon.png",
-            "24": "img/icon.png",
-            "32": "img/icon.png"
-        },
-        "default_popup": "index.html",
-        "default_title": "how are you brewin'?"
+    "author": "Cindy Dong, Edison Huang, and Olivia Seto",
+    "action": {
+      "default_icon": {
+        "16": "img/icon.png",
+        "24": "img/icon.png",
+        "32": "img/icon.png"
+      },
+      "default_popup": "index.html",
+      "default_title": "how are you brewin'?"
     },
-    "background": { 
-        "scripts": ["jquery.js","background.js"] 
-    }
-}
+    "permissions": ["activeTab"]
+  }
+  
