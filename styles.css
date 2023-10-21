@@ -24,8 +24,8 @@ h1 {
 }
 
 .boba_cup {
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 135px;
 }
 
 div.mood_options img.opt {
@@ -33,19 +33,74 @@ div.mood_options img.opt {
     height: 30px;
 }
 
+.dot {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.happy {
+    background-color: #fbf8cc;
+}
+
+.happy:hover, .happy:focus, .happy:active {
+    box-shadow: 0 0 20px #fbf8ccaf;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.content {
+    background-color: #fde4cf;
+}
+
+.content:hover, .content:focus, .content:active {
+    box-shadow: 0 0 20px #fde4cfd2;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.tired {
+    background-color: #ffcfd2;
+}
+
+.tired:hover, .tired:focus, .tired:active {
+    box-shadow: 0 0 20px #ffcfd2d6;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.sad {
+    background-color: #f1c0e8;
+}
+
+.sad:hover, .sad:focus, .sad:active {
+    box-shadow: 0 0 20px #f1c0e8ca;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.frustrated {
+    background-color: #cfbaf0;
+}
+
+.frustrated:hover, .frustrated:focus, .frustrated:active {
+    box-shadow: 0 0 20px #cfbaf0df;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
 .mood_options {
     display: grid;
     text-align: center;
     grid-template-columns: repeat(5, 1fr);
-    /* gap: 10px; */
 }
  
 .opt_with_text {
     display: inline-block;
-    /* padding: 0.5rem; */
     vertical-align: middle;
     text-align: center;
-    /* width: 30px; */
 }
 
 .mood-text {
