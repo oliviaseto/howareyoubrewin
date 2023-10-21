@@ -1,0 +1,1 @@
+let journal_form = document.getElementById("journal_form");

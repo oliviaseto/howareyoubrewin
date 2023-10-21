@@ -1,0 +1,45 @@
+html {
+    width: 400px;
+    height: 580px;
+}
+
+body {
+    /* background-color: ; */
+    text-align: center;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+div.mood_options img.opt {
+    width: 30px;
+    height: 30px;
+}
+
+.mood-options {
+    display: grid;
+}
+ 
+.opt_with_text {
+    display: inline-block;
+    padding: 1rem;
+    vertical-align: middle;
+    text-align: justify;
+    width: 30px;
+}
+
+img:hover{
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition:.5s;
+    box-shadow: 0 0 0 1px #b5a7a4;
+}
+
+#journal {
+    height:150px;
+    font-size:11pt;
+    text-align: left;
+}
