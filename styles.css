@@ -44,6 +44,8 @@ div.mood_options img.opt {
     outline-color: rgb(131, 131, 131);
     outline-style: solid;
     outline-width: 1px;
+    border: 2px solid transparent; 
+    box-shadow: none;
     cursor: pointer;
 }
 
@@ -132,6 +134,12 @@ div.mood_options img.opt {
     display: inline-block;
     vertical-align: middle;
     text-align: center;
+}
+
+.mood-text {
+    display: flex;
+    flex-direction: column;
+    margin-top: -1.5rem;
 }
 
 img:hover{
