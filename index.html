@@ -1,6 +1,8 @@
 <html>
     <head>
         <link rel="stylesheet" href="styles.css">
+        <script src='jquery-3.7.1.min.js'></script>
+        <script src="popup.js"></script>
     </head>
     <body>
         <h1> how are you brewin'? </h1>
@@ -45,6 +47,16 @@
                 <button type="submit">Submit</button>
             </div>
         </div>
+        <script>
+            $(document).ready(function() {
+                $("#happy").mouseover(function(){
+                    $("#boba_cup").attr("src", "img/happy_boba_cup.jpg");
+                });
+                $("#happy").mouseout(function(){
+                    $("#boba_cup").attr("src", "img/empty_boba_cup.jpg");
+                });
+            });
+        </script>
     </body>
 </html>
 

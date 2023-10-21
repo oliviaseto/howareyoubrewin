@@ -12,5 +12,8 @@
         },
         "default_popup": "index.html",
         "default_title": "how are you brewin'?"
+    },
+    "background": { 
+        "scripts": ["jquery.js","background.js"] 
     }
 }
