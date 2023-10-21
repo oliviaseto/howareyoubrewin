@@ -11,7 +11,7 @@ body {
     text-align: center;
     margin: 15px 25px;
     font-family: "Playpen Sans", sans-serif;
-    
+    color: #3d4e33;
 }
 
 ::-webkit-scrollbar {
@@ -21,6 +21,7 @@ body {
 
 h1 {
     font-family: "Pacifico", sans-serif;
+    color: #3d4e33;
 }
 
 .boba_cup {
@@ -43,6 +44,7 @@ div.mood_options img.opt {
     outline-color: rgb(131, 131, 131);
     outline-style: solid;
     outline-width: 1px;
+    cursor: pointer;
 }
 
 .happy {
@@ -51,6 +53,7 @@ div.mood_options img.opt {
 
 .happy-text {
     opacity: 0;
+    cursor: default;
 }
 
 .happy:hover, .happy:focus, .happy:active {
@@ -65,6 +68,7 @@ div.mood_options img.opt {
 
 .content-text {
     opacity: 0;
+    cursor: default;
 }
 
 .content:hover, .content:focus, .content:active {
@@ -79,6 +83,7 @@ div.mood_options img.opt {
 
 .tired-text {
     opacity: 0;
+    cursor: default;
 }
 
 .tired:hover, .tired:focus, .tired:active {
@@ -93,6 +98,7 @@ div.mood_options img.opt {
 
 .sad-text {
     opacity: 0;
+    cursor: default;
 }
 
 .sad:hover, .sad:focus, .sad:active {
@@ -107,6 +113,7 @@ div.mood_options img.opt {
 
 .frustrated-text {
     opacity: 0;
+    cursor: default;
 }
 
 .frustrated:hover, .frustrated:focus, .frustrated:active {
@@ -125,12 +132,6 @@ div.mood_options img.opt {
     display: inline-block;
     vertical-align: middle;
     text-align: center;
-}
-
-.mood-text {
-    display: flex;
-    flex-direction: column;
-    margin-top: -1.5rem;
 }
 
 img:hover{
@@ -159,4 +160,9 @@ form textarea {
     font-family: "Playpen Sans", sans-serif;
 }
 
-
+/* .submit-button {
+    border-radius: 5px;
+    background-color: green;
+    border: 1px solid;
+    color: #fff;
+} */
