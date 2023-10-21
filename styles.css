@@ -7,7 +7,7 @@ html {
 }
 
 body {
-    /* background-color: ; */
+    background-color: rgb(230, 246, 211);
     text-align: center;
     margin: 30px 25px;
     font-family: "Playpen Sans", sans-serif;
@@ -38,15 +38,21 @@ div.mood_options img.opt {
     width: 30px;
     border-radius: 50%;
     display: inline-block;
-    margin-top: 20px;
+    outline-color: rgb(131, 131, 131);
+    outline-style: solid;
+    outline-width: 1px;
 }
 
 .happy {
     background-color: #fbf8cc;
 }
 
+.happy-text {
+    opacity: 0%;
+}
+
 .happy:hover, .happy:focus, .happy:active {
-    box-shadow: 0 0 20px #fbf8ccaf;
+    box-shadow: 0 0 20px #fefac1d6;
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
