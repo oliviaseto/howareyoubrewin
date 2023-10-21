@@ -17,36 +17,29 @@ $(document).ready(function() {
     $('#happy').hover(function() {
         $('#boba_cup').attr('src', 'img/happy_boba_cup.jpg');
       }, function() {
-        $('#boba_cup').attr('src', 'img/default.png');
-    });
+        $('#boba_cup').attr('src', 'img/sparkles.png');
+      }, function() {
+        $(".happy-text").css("opacity", 1);
+      }
+    );
     $('#content').hover(function() {
         $('#boba_cup').attr('src', 'img/content_boba_cup.jpg');
       }, function() {
-        $('#boba_cup').attr('src', 'img/default.png');
+        $('#boba_cup').attr('src', 'img/sparkles.png');
     });
     $('#tired').hover(function() {
         $('#boba_cup').attr('src', 'img/tired_boba_cup.jpg');
       }, function() {
-        $('#boba_cup').attr('src', 'img/default.png');
+        $('#boba_cup').attr('src', 'img/sparkles.png');
     });
     $('#sad').hover(function() {
         $('#boba_cup').attr('src', 'img/sad_boba_cup.jpg');
       }, function() {
-        $('#boba_cup').attr('src', 'img/default.png');
+        $('#boba_cup').attr('src', 'img/sparkles.png');
     });
     $('#frustrated').hover(function() {
         $('#boba_cup').attr('src', 'img/frustrated_boba_cup.jpg');
       }, function() {
-        $('#boba_cup').attr('src', 'img/default.png');
-    });
-
-    $("#happy").mouseover(function(){
-        $(".happy-text").css("opacity", 1);
-        $("#boba_cup").attr("src", "img/happy_boba_cup.jpg");
-    });
-    
-    $("#happy").mouseout(function(){
-        $(".happy-text").css("opacity", 0);
-        $("#boba_cup").attr("src", "img/empty_boba_cup.jpg");
+        $('#boba_cup').attr('src', 'img/sparkles.png');
     });
 });
