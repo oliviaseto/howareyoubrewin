@@ -24,8 +24,10 @@ h1 {
 }
 
 .boba_cup {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 250px;
+    object-fit: cover;
+    overflow: hidden;
 }
 
 div.mood_options img.opt {
