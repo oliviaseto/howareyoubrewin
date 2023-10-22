@@ -44,13 +44,12 @@ $(document).ready(function() {
 
         // Get the number of days in the current month
         const daysInMonth = new Date(currentDate.getFullYear(), currentMonth + 1, 0).getDate();
-        
 
         // Generate grid items based on the number of days in the month
         for (let i = 1; i <= daysInMonth; i++) {
             const gridItem = document.createElement('div');
             gridItem.className = 'grid-item';
-            gridItem.textContent = `${currentMonth + 1},${i}`;
+            gridItem.textContent = `${i}`;
 
             // const currentDate = new Date();
             const clickedDateKey = `${year}-${currentMonth + 1}-${i}`;
@@ -123,12 +122,6 @@ $(document).ready(function() {
             localStorage.setItem(clickedDateKey, JSON.stringify(moodData));
         }
     }
-
-    // const storedData = JSON.parse(localStorage.getItem(clickedDateKey));
-    // if (storedData) {
-    //     selectedMood = storedData.mood;
-    //     selectedColor = storedData.color;
-    // }
 
     gridContainer.addEventListener('click', onGridItemClick);
 

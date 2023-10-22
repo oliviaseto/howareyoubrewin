@@ -255,12 +255,13 @@ textarea::placeholder {
 }
 
 .grid-item {
-    width: 47px;
-    height: 47px;
+    width: 38px;
+    height: 38px;
     background-color: white;
     color: black;
-    text-align: center;
+    text-align: left;
+    vertical-align: top;
     margin: 0; 
-    padding: 0; 
+    padding: 5px; 
     cursor: pointer;
 }
