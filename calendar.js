@@ -47,11 +47,7 @@ $(document).ready(function() {
         window.location.href = 'index.html';
     });
 
-
     const selectedMood = localStorage.getItem('selectedMood');
-
-    
-
 
 });
 
