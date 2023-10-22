@@ -5,14 +5,12 @@
         <script src="calendar.js"></script>
     </head>
     <body>
-        <h1> CALEDNAR </h1>
+        <h1> your monthly journal </h1>
         <div>
-            <div id="month-display">
-                <h2 id="current-month"></h2>
-            </div>
             <div id="navigation">
-                <button id="prev-month">Previous Month</button>
-                <button id="next-month">Next Month</button>
+                <button class="month-button" id="prev-month">&lt</button>
+                <h2 id="current-month"></h2>
+                <button class="month-button" id="next-month">&gt</button>
             </div>
         </div>
         <div class="grid-container">
@@ -49,5 +47,6 @@
             <div class="grid-item">4,7</div>
             <div class="grid-item">4,8</div>
         </div>
+        <button class="back-to-index-button" id="back-to-index-button">BACK TO INDEX</button>
     </body>
 </html>

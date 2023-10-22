@@ -25,6 +25,7 @@ h1 {
     margin-bottom: 20px;
 }
 
+/* INDEX */
 .boba_cup {
     width: 300px;
     height: 250px;
@@ -201,22 +202,58 @@ textarea::placeholder {
     float: left;
 }
 
+/* CALENDAR */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
 #month-display {
     text-align: center;
 }
 
 #navigation {
     text-align: center;
+    padding: 0px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.month-button {
+    border-radius: 5px;
+    background-color: #5b744c;
+    border: 1px solid transparent;
+    color: #fff;
+    font-family: "Playpen Sans", sans-serif;
+    font-size: 10px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.back-to-index-button {
+    border-radius: 5px;
+    background-color: #5b744c;
+    border: 1px solid transparent;
+    color: #fff;
+    font-family: "Playpen Sans", sans-serif;
+    font-size: 10px;
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
 }
 
 .grid-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(8, 1fr);
+    padding: 5px 10px;
 }
 
 .grid-item {
-    background-color: #3498db;
-    color: #fff;
+    background-color: white;
+    color: black;
     text-align: center;
 }

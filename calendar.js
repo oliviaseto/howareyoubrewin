@@ -27,6 +27,11 @@ $(document).ready(function() {
         // You can add more code to update your grid here
     });
 
-    // Initialize the calendar display when the page loads
+    // initialize the calendar display when the page loads
     updateMonthDisplay();
+
+    // go back to index
+    $('#back-to-index-button').click(function () {
+        window.location.href = 'index.html';
+    });
 });

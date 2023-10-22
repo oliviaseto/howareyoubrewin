@@ -97,13 +97,9 @@ $(document).ready(function() {
     var formattedDate = currentDate.toLocaleDateString('en-US', options);
     $('#date').text(formattedDate);
 
-
-
     let submitButton = document.getElementById('submit-button');
 
     submitButton.addEventListener('click', function () {
         window.location.href = 'calendar.html';
     });
-
-
 });
