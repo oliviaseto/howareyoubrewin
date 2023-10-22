@@ -202,3 +202,22 @@ textarea::placeholder {
     float: left;
 }
 
+#month-display {
+    text-align: center;
+}
+
+#navigation {
+    text-align: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+}
+
+.grid-item {
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+}

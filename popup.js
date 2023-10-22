@@ -97,3 +97,25 @@ $(document).ready(function() {
     var formattedDate = currentDate.toLocaleDateString('en-US', options);
     $('#date').text(formattedDate);
 });
+
+const currentMonthElement = document.getElementById('current-month');      
+const months = [
+    'January', 'February', 'March', 'April',
+    'May', 'June', 'July', 'August',
+    'September', 'October', 'November', 'December'
+];
+const currentMonth = months[currentDate.getMonth()];
+const currentYear = currentDate.getFullYear();
+currentMonthElement.textContent = `Current Month and Year: ${currentMonth} ${currentYear}`;
+
+prevMonthButton.addEventListener('click', () => {
+    currentMonth = (currentMonth - 1 + 12) % 12; // Cycle through months
+    updateMonthDisplay();
+    updateGrid();
+});
+
+nextMonthButton.addEventListener('click', () => {
+    currentMonth = (currentMonth + 1) % 12; // Cycle through months
+    updateMonthDisplay();
+    updateGrid();
+});
