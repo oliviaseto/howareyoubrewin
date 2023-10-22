@@ -43,7 +43,7 @@ $(document).ready(function() {
 
     // remove the border when clicking off
     $(document).click(function(event) {
-        if (!$(event.target).hasClass('dot')) {
+        if (!$(event.target).hasClass('dot') && !$(event.target).is('textarea')) {
             selectedMood = null;
             updateImage();
             $('.dot').css('border', '2px solid transparent');
