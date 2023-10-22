@@ -3,6 +3,18 @@
 // });
 
 $(document).ready(function() {
+    
+    // FADE IN -- UNCOMMENT THIS AFTER FINISHING
+    // $('h1, .boba_cup, .journal_form, .mood_options, form, button, #date').hide();
+
+    // let fadeDelay = 250; // 250 ms
+
+    // setTimeout(function() {
+    //     $('h1, .boba_cup, .journal_form, .mood_options, form, button, #date').fadeIn();
+    // }, fadeDelay);
+
+
+    // MOOD STUFF
     var selectedMood = null;
 
     function updateImage() {
@@ -97,9 +109,16 @@ $(document).ready(function() {
     var formattedDate = currentDate.toLocaleDateString('en-US', options);
     $('#date').text(formattedDate);
 
+
+
+    // SUBMIT BUTTON
     let submitButton = document.getElementById('submit-button');
 
     submitButton.addEventListener('click', function () {
+        localStorage.setItem('selectedMood', selectedMood);
+        // setTimeout(function() {
+        //     $('h1, .boba_cup, .journal_form, .mood_options, form, button, #date').fadeOut();
+        // }, fadeDelay);
         window.location.href = 'calendar.html';
     });
 });

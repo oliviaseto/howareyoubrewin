@@ -215,10 +215,11 @@ textarea::placeholder {
 }
 
 #navigation {
-    text-align: center;
     padding: 0px 10px;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    text-align: center;
 }
 
 .month-button {
