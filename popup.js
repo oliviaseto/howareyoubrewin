@@ -96,4 +96,14 @@ $(document).ready(function() {
     var options = { year: 'numeric', month: 'long', day: 'numeric' };
     var formattedDate = currentDate.toLocaleDateString('en-US', options);
     $('#date').text(formattedDate);
+
+
+
+    let submitButton = document.getElementById('submit-button');
+
+    submitButton.addEventListener('click', function () {
+        window.location.href = 'calendar.html';
+    });
+
+
 });
