@@ -264,3 +264,14 @@ textarea::placeholder {
     padding: 0; 
     cursor: pointer;
 }
+
+.calendar-img {
+    width: fit-content; 
+    height: auto; 
+    object-fit: contain; 
+    background-image: url('img/calendar.jpg');
+    background-size: contain;
+    position: relative;
+    top: -20px; 
+    left: -15px; 
+}
