@@ -1,3 +1,6 @@
+let selectedMood = null;
+let selectedColor = null;
+
 $(document).ready(function() {
     const currentMonthElement = document.getElementById('current-month');
     const gridContainer = document.querySelector('.grid-container');
@@ -8,6 +11,22 @@ $(document).ready(function() {
         'September', 'October', 'November', 'December'
     ];
     let currentMonth = currentDate.getMonth();
+
+    const year = currentDate.getFullYear();
+    const month = currentDate.getMonth() + 1; // Months are zero-indexed
+    const day = currentDate.getDate();
+    const currentDateKey = `${year}-${month}-${day}`;
+    
+    const storedData = localStorage.getItem(currentDateKey);
+
+    console.log(storedData);
+    
+    if (storedData) {
+        const moodData = JSON.parse(storedData);
+        selectedMood = moodData.mood;
+        selectedColor = moodData.color;
+        // Use selectedMood and selectedColor as needed (e.g., for setting grid item color)
+    }
 
     function updateMonthDisplay() {
         currentMonthElement.textContent = `${months[currentMonth]} ${currentDate.getFullYear()}`;
@@ -22,6 +41,13 @@ $(document).ready(function() {
             const gridItem = document.createElement('div');
             gridItem.className = 'grid-item';
             gridItem.textContent = `${currentMonth + 1},${i}`;
+
+            const currentDate = new Date();
+            if (currentDate.getMonth() === currentMonth && currentDate.getDate() === i && selectedMood != null) {
+                // Set background color based on selectedMood variable
+                gridItem.style.backgroundColor = selectedColor;
+            }
+
             gridContainer.appendChild(gridItem);
         }
     }
@@ -47,32 +73,27 @@ $(document).ready(function() {
         window.location.href = 'index.html';
     });
 
-
-    const selectedMood = localStorage.getItem('selectedMood');
-
     
-
-
 });
 
 
-function getColorForMood(selectedMood) {
-    if (selectedMood === 'happy') {
-        return '#fbf8cc';
-    } 
-    else if (selectedMood === 'content') {
-        return '#fde4cf';
-    }
-    else if (selectedMood === 'tired') {
-        return '#ffcfd2';
-    } 
-    else if (selectedMood === 'sad') {
-        return '#f1c0e8'; 
-    }
-    else if (selectedMood === 'frustrated') {
-        return '#cfbaf0';
-    }
-    else {
-        return 'white'; // default
-    }
-}
+// function getColorForMood(selectedMood) {
+//     if (selectedMood === 'happy') {
+//         return '#fbf8cc';
+//     } 
+//     else if (selectedMood === 'content') {
+//         return '#fde4cf';
+//     }
+//     else if (selectedMood === 'tired') {
+//         return '#ffcfd2';
+//     } 
+//     else if (selectedMood === 'sad') {
+//         return '#f1c0e8'; 
+//     }
+//     else if (selectedMood === 'frustrated') {
+//         return '#cfbaf0';
+//     }
+//     // else {
+//     //     return 'white'; // default
+//     // }
+// }
