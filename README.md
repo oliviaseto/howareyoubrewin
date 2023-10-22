@@ -1,7 +1,7 @@
-# howareyoubrewin'
+# how are you brewin'?
 A Chrome extension to track and journal your feelings.
 
-The inspiration for "howareyoubrewin'" stems from the need to create an engaging digital space for individuals, particularly women, to freely express emotions, fostering emotional well-being and self-awareness with a focus on women's unique mental health experiences. By offering a platform to track and journal emotions, "howareyoubrewin'" aims to support women in understanding and managing their emotional well-being while contributing to the broader conversation on the significance of women's mental health.
+The inspiration for "how are you brewin'?" stems from the need to create an engaging digital space for individuals, particularly women, to freely express emotions, fostering emotional well-being and self-awareness with a focus on women's unique mental health experiences. By offering a platform to track and journal emotions, "how are you brewin'?" aims to support women in understanding and managing their emotional well-being while contributing to the broader conversation on the significance of women's mental health.
 
 Made for Girls Hoo Hack 2023, a gender-inclusive, women-centered hackathon that is focused on promoting innovation while celebrating diversity.
 
