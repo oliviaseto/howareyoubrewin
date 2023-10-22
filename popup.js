@@ -86,4 +86,10 @@ $(document).ready(function() {
     $("#frustrated").mouseout(function(){
         $(".frustrated-text").css("opacity", 0);
     });
+
+    // GET DATE
+    var currentDate = new Date();
+    var options = { year: 'numeric', month: 'long', day: 'numeric' };
+    var formattedDate = currentDate.toLocaleDateString('en-US', options);
+    $('#date').text(formattedDate);
 });
