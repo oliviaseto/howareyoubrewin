@@ -249,9 +249,7 @@ textarea:focus {
     width: auto;
     height: auto;
     cursor: pointer;
-    margin: 10px;
-    bottom: 100px;
-    left: 10px;
+    margin: 110px;
 }
 
 .back-to-index-button:hover {
