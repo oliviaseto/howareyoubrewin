@@ -90,8 +90,7 @@ $(document).ready(function() {
         const gridItem = event.target;
 
         if (gridItem.classList.contains('grid-item')) {
-            const dateParts = gridItem.textContent.split(',');
-            const day = parseInt(dateParts[1]);
+            const day = parseInt(gridItem.textContent);
             const clickedDateKey = `${year}-${currentMonth + 1}-${day}`;
     
             // Show a rotating list of predefined moods and colors
@@ -128,8 +127,7 @@ $(document).ready(function() {
     function initializeGridItems() {
         const gridItems = document.querySelectorAll('.grid-item');
         gridItems.forEach(gridItem => {
-            const dateParts = gridItem.textContent.split(',');
-            const day = parseInt(dateParts[1]);
+            const day = parseInt(gridItem.textContent);
             const clickedDateKey = `${year}-${currentMonth + 1}-${day}`;
             const storedData = localStorage.getItem(clickedDateKey);
 
