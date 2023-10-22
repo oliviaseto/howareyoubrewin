@@ -20,7 +20,7 @@ body {
 
 
 h1 {
-    font-family: "Playpen Sans", sans-serif;
+    font-family: "Roboto Mono", sans-serif;
     color: #3d4e33;
     margin-bottom: 20px;
 }
@@ -57,7 +57,6 @@ div.mood_options img.opt {
 .happy-text {
     opacity: 0;
     cursor: default;
-    text-shadow: 1px 1px 1px #fef580;
 }
 
 .happy:hover, .happy:focus, .happy:active {
@@ -73,7 +72,6 @@ div.mood_options img.opt {
 .content-text {
     opacity: 0;
     cursor: default;
-    text-shadow: 1px 1px 1px #ffb274;
 }
 
 .content:hover, .content:focus, .content:active {
@@ -89,7 +87,6 @@ div.mood_options img.opt {
 .tired-text {
     opacity: 0;
     cursor: default;
-    text-shadow: 1px 1px 1px #ff8d94;
 }
 
 .tired:hover, .tired:focus, .tired:active {
@@ -105,7 +102,6 @@ div.mood_options img.opt {
 .sad-text {
     opacity: 0;
     cursor: default;
-    text-shadow: 1px 1px 1px #ef7dda;
 }
 
 .sad:hover, .sad:focus, .sad:active {
@@ -121,7 +117,6 @@ div.mood_options img.opt {
 .frustrated-text {
     opacity: 0;
     cursor: default;
-    text-shadow: 1px 1px 1px #ac81f2;
 }
 
 .frustrated:hover, .frustrated:focus, .frustrated:active {
@@ -164,11 +159,10 @@ form textarea {
     background: rgb(157, 183, 121);
     padding: 5px 10px;
     font-family: "Playpen Sans", sans-serif;
-    color: #3d4e33;
+    color: #fff
 }
-
 textarea::placeholder {
-    color: #3d4e33;
+    color: #fff; 
 }
 
 .submit-button {
