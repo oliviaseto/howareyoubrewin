@@ -89,6 +89,8 @@ $(document).ready(function() {
     // initialize the calendar display when the page loads
     updateMonthDisplay();
 
+    let clickCounter = 0;
+
     function onGridItemClick(event) {
         const gridItem = event.target;
 
@@ -97,8 +99,8 @@ $(document).ready(function() {
             const clickedDateKey = `${year}-${currentMonth + 1}-${day}`;
     
             // Show a rotating list of predefined moods and colors
-            const moods = ['happy', 'content', 'tired', 'sad', 'frustrated'];
-            const colors = ['#fbf8cc', '#fde4cf', '#ffcfd2', '#f1c0e8', '#cfbaf0'];
+            const moods = ['happy', 'content', 'tired', 'sad', 'frustrated', 'default'];
+            const colors = ['#fbf8cc', '#fde4cf', '#ffcfd2', '#f1c0e8', '#cfbaf0', '#FFFFFF'];
     
             // Get the current mood and color index from the grid item
             let moodIndex = moods.indexOf(selectedMood);
@@ -114,7 +116,13 @@ $(document).ready(function() {
     
             // Set background color of the clicked grid item
             gridItem.style.backgroundColor = selectedColor;
-    
+            clickCounter++;
+            // check if it's the 6th click, reset to default
+            if (clickCounter >= 6){
+                selectedMood = 'default';
+                selectedColor = 'FFFFFF';
+                clickCounter = 0;
+            }
             const moodData = {
                 mood: selectedMood,
                 color: selectedColor
