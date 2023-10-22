@@ -3,50 +3,54 @@
 // });
 
 $(document).ready(function() {
+    var selectedMood = null;
+
+    function updateImage() {
+        if (selectedMood) {
+            $('#boba_cup').attr('src', 'img/' + selectedMood + '.png');
+        }
+        else {
+            $('#boba_cup').attr('src', 'img/sparkles.png');
+        }
+    }
+
     // SELECT MOOD
     $('.dot').click(function() {
+        // resetImage();
         $('.dot').css('border', '2px solid transparent');
         $(this).css('border', '2px solid darkgray');
+        
+        selectedMood = $(this).attr('id');
+        updateImage();
     });
-    // remove the border when clicking off
-    $(document).click(function(event) {
-        if (!$(event.target).hasClass('dot')) {
-            $('.dot').css('border', '2px solid transparent');
+
+    // Hover effect for mood buttons
+    $('.dot').hover(function() {
+            // Change image source to corresponding mood when hovering
+            var mood = $(this).attr('id');
+            $('#boba_cup').attr('src', 'img/' + mood + '.png');
+        },
+        function() {
+            // Reset image to sparkles.png when not hovering
+            updateImage();
         }
-    });
+    );
+
     // prevent the click event from propagating within .dot elements
     $('.dot').click(function(event) {
         event.stopPropagation();
     });
 
-    // HOVER OVER MOOD
-    $('#happy').hover(function() {
-        $('#boba_cup').attr('src', 'img/happy.png');
-      }, function() {
-        $('#boba_cup').attr('src', 'img/sparkles.png');
-      }
-    );
-    $('#content').hover(function() {
-        $('#boba_cup').attr('src', 'img/content.png');
-      }, function() {
-        $('#boba_cup').attr('src', 'img/sparkles.png');
-    });
-    $('#tired').hover(function() {
-        $('#boba_cup').attr('src', 'img/tired.png');
-      }, function() {
-        $('#boba_cup').attr('src', 'img/sparkles.png');
-    });
-    $('#sad').hover(function() {
-        $('#boba_cup').attr('src', 'img/sad.png');
-      }, function() {
-        $('#boba_cup').attr('src', 'img/sparkles.png');
-    });
-    $('#frustrated').hover(function() {
-        $('#boba_cup').attr('src', 'img/frustrated1.png');
-      }, function() {
-        $('#boba_cup').attr('src', 'img/sparkles.png');
+    // remove the border when clicking off
+    $(document).click(function(event) {
+        if (!$(event.target).hasClass('dot')) {
+            selectedMood = null;
+            updateImage();
+            $('.dot').css('border', '2px solid transparent');
+        }
     });
 
+    // HOVER OVER MOOD
     $("#happy").mouseover(function(){
         $(".happy-text").css("opacity", 1);
     });
