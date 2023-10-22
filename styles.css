@@ -20,7 +20,7 @@ body {
 
 
 h1 {
-    font-family: "Roboto Mono", sans-serif;
+    font-family: "Playpen Sans", sans-serif;
     color: #3d4e33;
     margin-bottom: 20px;
 }
@@ -164,11 +164,11 @@ form textarea {
     background: rgb(157, 183, 121);
     padding: 5px 10px;
     font-family: "Playpen Sans", sans-serif;
-    color: #fff
+    color: #3d4e33;
 }
 
 textarea::placeholder {
-    color: #fff; 
+    color: #3d4e33;
 }
 
 .submit-button {
