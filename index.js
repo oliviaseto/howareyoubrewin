@@ -16,6 +16,7 @@ $(document).ready(function() {
 
     // MOOD STUFF
     var selectedMood = null;
+    var note = ". . .";
 
     function updateImage() {
         if (selectedMood) {
@@ -121,6 +122,8 @@ $(document).ready(function() {
         const day = currentDate.getDate();
         const currentDateKey = `${year}-${month}-${day}`;
 
+        const journalText = document.getElementById('journal').value;
+
         const storedData = localStorage.getItem(currentDateKey);
         if (storedData) {
             const moodData = JSON.parse(storedData);
@@ -139,7 +142,8 @@ $(document).ready(function() {
         // Store both the selected mood and its color
         const moodData = {
             mood: selectedMood,
-            color: selectedColor
+            color: selectedColor,
+            journalText: journalText
         };
     
         localStorage.setItem(currentDateKey, JSON.stringify(moodData));

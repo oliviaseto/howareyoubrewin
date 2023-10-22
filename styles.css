@@ -172,10 +172,15 @@ form textarea {
     padding: 5px 10px;
     font-family: "Playpen Sans", sans-serif;
     color: #3d4e33;
+    -webkit-transition: background-color 0.5s;
 }
 
 textarea::placeholder {
     color: #3d4e33;
+}
+
+textarea:focus {
+    background-color: rgba(165, 193, 126, 0.892);
 }
 
 .submit-button {
@@ -247,6 +252,10 @@ textarea::placeholder {
     margin: 10px;
 }
 
+.back-to-index-button:hover {
+    box-shadow: 0 0 10px #475b3cd2;
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -275,4 +284,26 @@ textarea::placeholder {
     position: relative;
     top: -20px; 
     left: -15px; 
+}
+
+.journal-content {
+    background-color: white;
+    border: 1px solid #5b744c;
+    border-radius: 10px;
+    height: 70px;
+    margin-top: 5px;
+    margin-left: 115px;
+    margin-right: 90px;
+    text-align: left;
+    padding-left: 5px;
+    padding-right: 3px;
+    overflow-y: scroll;
+    word-wrap: break-word;
+    opacity: 0;
+}
+
+.journal-text {
+    font-size: 10px;
+    margin-top: 3px;
+    margin-bottom: 5px;
 }

@@ -1,5 +1,6 @@
 let selectedMood = null;
 let selectedColor = null;
+let selectedJournalText = '. . .';
 
 const urlParams = new URLSearchParams(window.location.search);
 const storedMood = urlParams.get('mood');
@@ -34,8 +35,10 @@ $(document).ready(function() {
         const moodData = JSON.parse(storedData);
         selectedMood = moodData.mood;
         selectedColor = moodData.color;
-        // Use selectedMood and selectedColor as needed (e.g., for setting grid item color)
+        selectedJournalText = moodData.journalText;
     }
+
+    console.log(selectedJournalText);
 
     function updateMonthDisplay() {
         currentMonthElement.textContent = `${months[currentMonth]} ${currentDate.getFullYear()}`;
@@ -134,12 +137,32 @@ $(document).ready(function() {
             if (storedData) {
                 const moodData = JSON.parse(storedData);
                 gridItem.style.backgroundColor = moodData.color;
+
+                gridItem.addEventListener('mouseenter', () => {
+                    if (moodData.journalText) {
+                        document.getElementById('journal-text').textContent = moodData.journalText;
+                    } else {
+                        document.getElementById('journal-text').textContent = '. . .';
+                    }
+                });
+            } else {
+                gridItem.addEventListener('mouseenter', () => {
+                    document.getElementById('journal-text').textContent = '. . .';
+                });
             }
         });
     }
 
     // Call the function to initialize grid items with stored values
     initializeGridItems();
+
+    $(".grid-item").mouseover(function(){
+        $(".journal-content").css("opacity", 1);
+    });
+
+    $(".grid-item").mouseout(function(){
+        $(".journal-content").css("opacity", 0);
+    });
     
 
     // go back to index
