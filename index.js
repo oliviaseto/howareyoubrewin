@@ -145,8 +145,10 @@ $(document).ready(function() {
         localStorage.setItem(currentDateKey, JSON.stringify(moodData));
 
         console.log(currentDateKey, JSON.stringify(moodData));
-        window.location.href = 'calendar.html';
-        // setTimeout(function() {
+        // window.location.href = 'calendar.html';
+        window.location.href = `calendar.html?mood=${selectedMood}&color=${selectedColor}`;
+
+        // // setTimeout(function() {
         //     $('h1, .boba_cup, .journal_form, .mood_options, form, button, #date').fadeOut();
         // }, fadeDelay);
         // window.location.href = 'calendar.html';

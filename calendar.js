@@ -1,6 +1,15 @@
 let selectedMood = null;
 let selectedColor = null;
 
+const urlParams = new URLSearchParams(window.location.search);
+const storedMood = urlParams.get('mood');
+const storedColor = urlParams.get('color');
+
+if (storedMood && storedColor) {
+    selectedMood = storedMood;
+    selectedColor = storedColor;
+}
+
 $(document).ready(function() {
     const currentMonthElement = document.getElementById('current-month');
     const gridContainer = document.querySelector('.grid-container');
@@ -35,6 +44,7 @@ $(document).ready(function() {
 
         // Get the number of days in the current month
         const daysInMonth = new Date(currentDate.getFullYear(), currentMonth + 1, 0).getDate();
+        
 
         // Generate grid items based on the number of days in the month
         for (let i = 1; i <= daysInMonth; i++) {
@@ -42,14 +52,23 @@ $(document).ready(function() {
             gridItem.className = 'grid-item';
             gridItem.textContent = `${currentMonth + 1},${i}`;
 
-            const currentDate = new Date();
-            if (currentDate.getMonth() === currentMonth && currentDate.getDate() === i && selectedMood != null) {
+            // const currentDate = new Date();
+            const clickedDateKey = `${year}-${currentMonth + 1}-${i}`;
+            const storedData = localStorage.getItem(clickedDateKey);
+
+            if (storedData) {
+                const moodData = JSON.parse(storedData);
+                gridItem.style.backgroundColor = moodData.color;
+            }
+            else if (currentDate.getMonth() === currentMonth && currentDate.getDate() === i && selectedMood != null) {
                 // Set background color based on selectedMood variable
                 gridItem.style.backgroundColor = selectedColor;
             }
 
             gridContainer.appendChild(gridItem);
         }
+
+        initializeGridItems();
     }
 
     const prevMonthButton = document.getElementById('prev-month');
@@ -68,15 +87,74 @@ $(document).ready(function() {
     // initialize the calendar display when the page loads
     updateMonthDisplay();
 
+    function onGridItemClick(event) {
+        const gridItem = event.target;
+
+        if (gridItem.classList.contains('grid-item')) {
+            const dateParts = gridItem.textContent.split(',');
+            const day = parseInt(dateParts[1]);
+            const clickedDateKey = `${year}-${currentMonth + 1}-${day}`;
+    
+            // Show a rotating list of predefined moods and colors
+            const moods = ['happy', 'content', 'tired', 'sad', 'frustrated'];
+            const colors = ['#fbf8cc', '#fde4cf', '#ffcfd2', '#f1c0e8', '#cfbaf0'];
+    
+            // Get the current mood and color index from the grid item
+            let moodIndex = moods.indexOf(selectedMood);
+            let colorIndex = colors.indexOf(selectedColor);
+    
+            // Increment the mood and color index
+            moodIndex = (moodIndex + 1) % moods.length;
+            colorIndex = (colorIndex + 1) % colors.length;
+    
+            // Update selected mood and color
+            selectedMood = moods[moodIndex];
+            selectedColor = colors[colorIndex];
+    
+            // Set background color of the clicked grid item
+            gridItem.style.backgroundColor = selectedColor;
+    
+            const moodData = {
+                mood: selectedMood,
+                color: selectedColor
+            };
+    
+            console.log(clickedDateKey, JSON.stringify(moodData));
+            localStorage.setItem(clickedDateKey, JSON.stringify(moodData));
+        }
+    }
+
+    // const storedData = JSON.parse(localStorage.getItem(clickedDateKey));
+    // if (storedData) {
+    //     selectedMood = storedData.mood;
+    //     selectedColor = storedData.color;
+    // }
+
+    gridContainer.addEventListener('click', onGridItemClick);
+
+    function initializeGridItems() {
+        const gridItems = document.querySelectorAll('.grid-item');
+        gridItems.forEach(gridItem => {
+            const dateParts = gridItem.textContent.split(',');
+            const day = parseInt(dateParts[1]);
+            const clickedDateKey = `${year}-${currentMonth + 1}-${day}`;
+            const storedData = localStorage.getItem(clickedDateKey);
+
+            if (storedData) {
+                const moodData = JSON.parse(storedData);
+                gridItem.style.backgroundColor = moodData.color;
+            }
+        });
+    }
+
+    // Call the function to initialize grid items with stored values
+    initializeGridItems();
+    
+
     // go back to index
     $('#back-to-index-button').click(function () {
         window.location.href = 'index.html';
     });
-
-
-
-    
-
 
 });
 
