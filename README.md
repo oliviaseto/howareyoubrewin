@@ -1,9 +1,9 @@
 # how are you brewin'?
 A Chrome extension to track and journal your feelings.
 
-The inspiration for "how are you brewin'?" stems from the need to create an engaging digital space for individuals, particularly women, to freely express emotions, fostering emotional well-being and self-awareness with a focus on women's unique mental health experiences. By offering a platform to track and journal emotions, "how are you brewin'?" aims to support women in understanding and managing their emotional well-being while contributing to the broader conversation on the significance of women's mental health.
+The inspiration for "how are you brewin'?" stems from the need to create a convenient and engaging digital space for individuals to freely express emotions, fostering emotional well-being and self-awareness with a focus on catering to each individual's unique mental health experiences. 
 
-Made for Girls Hoo Hack 2023, a gender-inclusive, women-centered hackathon that is focused on promoting innovation while celebrating diversity.
+Made for Girls Hoo Hack 2023, a gender-inclusive, women-centered hackathon that is focused on promoting innovation while celebrating diversity. [Check out our Devpost!](https://devpost.com/software/how-are-you-brewin) 
 
 ## Key Features
 🌈 Mood Selection: Choose your mood for the day from a range of boba-themed emotions.
@@ -18,5 +18,14 @@ Made for Girls Hoo Hack 2023, a gender-inclusive, women-centered hackathon that 
 * JavaScript
 * jQuery
 
+## Installation and Setup (for local development)
+* Clone this repository: git clone https://github.com/oliviaseto/howareyoubrewin.git
+* Go to the Extensions page by entering chrome://extensions in a new tab.
+* Enable Developer Mode by clicking the toggle switch next to Developer mode.
+* Click the Load unpacked button and select the extension directory.
+* You can now access and pin the extension in your Chrome browser by clicking the puzzle piece icon.
+
+We plan on making this extension available in the Chrome Web Store in the near future!
+  
 ## Authors
 Cindy Dong, Edison Huang, and Olivia Seto.
