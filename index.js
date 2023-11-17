@@ -1,35 +1,23 @@
-// $(document).ready(function() {
-//     alert('jQuery is working!');
-// });
-
 $(document).ready(function() {
     
     // FADE IN -- UNCOMMENT THIS AFTER FINISHING
     // $('h1, .boba_cup, .journal_form, .mood_options, form, button, #date').hide();
-
     // let fadeDelay = 250; // 250 ms
-
     // setTimeout(function() {
     //     $('h1, .boba_cup, .journal_form, .mood_options, form, button, #date').fadeIn();
     // }, fadeDelay);
 
 
-    // MOOD STUFF
-    var selectedMood = null;
-    var note = ". . .";
+    let selectedMood = null;
 
+    // Update the image
     function updateImage() {
-        if (selectedMood) {
-            $('#boba_cup').attr('src', 'img/' + selectedMood + '.png');
-        }
-        else {
-            $('#boba_cup').attr('src', 'img/sparkles.png');
-        }
+        const bobaCup = $('#boba_cup');
+        bobaCup.attr('src', selectedMood ? `img/${selectedMood}.png` : 'img/sparkles.png')
     }
 
-    // SELECT MOOD
+    // Selected mood effects
     $('.dot').click(function() {
-        // resetImage();
         $('.dot').css('border', '2px solid transparent');
         $(this).css('border', '2px solid darkgray');
         
@@ -37,10 +25,11 @@ $(document).ready(function() {
         updateImage();
     });
 
-    // Hover effect for mood buttons
-    $('.dot').hover(function() {
+    // Hover effect for mood buttons (Image)
+    $('.dot').hover(
+        function() {
             // Change image source to corresponding mood when hovering
-            var mood = $(this).attr('id');
+            let mood = $(this).attr('id');
             $('#boba_cup').attr('src', 'img/' + mood + '.png');
         },
         function() {
@@ -49,12 +38,10 @@ $(document).ready(function() {
         }
     );
 
-    // prevent the click event from propagating within .dot elements
-    $('.dot').click(function(event) {
-        event.stopPropagation();
-    });
+    // Prevent the click event from propagating within .dot elements
+    $('.dot').click(event => event.stopPropagation());
 
-    // remove the border when clicking off
+    // Remove the selection border when clicking off
     $(document).click(function(event) {
         if (!$(event.target).hasClass('dot') && !$(event.target).is('textarea')) {
             selectedMood = null;
@@ -63,57 +50,28 @@ $(document).ready(function() {
         }
     });
 
-    // HOVER OVER MOOD
-    $("#happy").mouseover(function(){
-        $(".happy-text").css("opacity", 1);
-    });
-    
-    $("#happy").mouseout(function(){
-        $(".happy-text").css("opacity", 0);
-    });
+    const moodTextMap = {
+        'happy': '.happy-text',
+        'content': '.content-text',
+        'tired': '.tired-text',
+        'sad': '.sad-text',
+        'frustrated': '.frustrated-text'
+    };
 
-    $("#content").mouseover(function(){
-        $(".content-text").css("opacity", 1);
-    });
-    
-    $("#content").mouseout(function(){
-        $(".content-text").css("opacity", 0);
-    });
+    // Hover effect for mood buttons (Text)
+    for (const mood in moodTextMap) {
+        $(`#${mood}`).mouseover(() => $(moodTextMap[mood]).css('opacity', 1))
+                      .mouseout(() => $(moodTextMap[mood]).css('opacity', 0))
+    }
 
-    $("#tired").mouseover(function(){
-        $(".tired-text").css("opacity", 1);
-    });
-    
-    $("#tired").mouseout(function(){
-        $(".tired-text").css("opacity", 0);
-    });
-
-    $("#sad").mouseover(function(){
-        $(".sad-text").css("opacity", 1);
-    });
-    
-    $("#sad").mouseout(function(){
-        $(".sad-text").css("opacity", 0);
-    });
-
-    $("#frustrated").mouseover(function(){
-        $(".frustrated-text").css("opacity", 1);
-    });
-    
-    $("#frustrated").mouseout(function(){
-        $(".frustrated-text").css("opacity", 0);
-    });
-
-    // GET DATE
-    var currentDate = new Date();
-    var options = { year: 'numeric', month: 'long', day: 'numeric' };
-    var formattedDate = currentDate.toLocaleDateString('en-US', options);
+    // Get Date
+    const currentDate = new Date();
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    const formattedDate = currentDate.toLocaleDateString('en-US', options);
     $('#date').text(formattedDate);
 
-
-
-    // SUBMIT BUTTON
-    let submitButton = document.getElementById('submit-button');
+    // Handle submission
+    const submitButton = document.getElementById('submit-button');
 
     submitButton.addEventListener('click', function () {
         const currentDate = new Date();
@@ -121,20 +79,17 @@ $(document).ready(function() {
         const month = currentDate.getMonth() + 1; // Months are zero-indexed
         const day = currentDate.getDate();
         const currentDateKey = `${year}-${month}-${day}`;
-
         const journalText = document.getElementById('journal').value;
-
         const storedData = localStorage.getItem(currentDateKey);
+
         if (storedData) {
             const moodData = JSON.parse(storedData);
             if (moodData.mood != null) {
                 selectedMood = moodData.mood;
                 selectedColor = moodData.color;
             }
-            else {
-                selectedColor = getColorForMood(selectedMood);
-            }
-        } else {
+        } 
+        else {
             // If there is no stored mood, use the newly selected mood and its associated color
             selectedColor = getColorForMood(selectedMood);
         }
@@ -156,27 +111,16 @@ $(document).ready(function() {
         //     $('h1, .boba_cup, .journal_form, .mood_options, form, button, #date').fadeOut();
         // }, fadeDelay);
         // window.location.href = 'calendar.html';
-    });
-    
+    }); 
 });
 
 function getColorForMood(selectedMood) {
-    if (selectedMood === 'happy') {
-        return '#fbf8cc';
-    } 
-    else if (selectedMood === 'content') {
-        return '#fde4cf';
-    }
-    else if (selectedMood === 'tired') {
-        return '#ffcfd2';
-    } 
-    else if (selectedMood === 'sad') {
-        return '#f1c0e8'; 
-    }
-    else if (selectedMood === 'frustrated') {
-        return '#cfbaf0';
-    }
-    // else {
-    //     return 'white'; // default
-    // }
+    const colorMap = {
+        'happy': '#fbf8cc',
+        'content': '#fde4cf',
+        'tired': '#ffcfd2',
+        'sad': '#f1c0e8',
+        'frustrated': '#cfbaf0'
+    };
+    return colorMap[selectedMood];
 }
