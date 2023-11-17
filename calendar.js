@@ -147,7 +147,7 @@ $(document).ready(function() {
                 gridItem.style.backgroundColor = moodData.color;
 
                 gridItem.addEventListener('mouseenter', () => {
-                    if (moodData.journalText) {
+                    if (moodData.journalText != '') {
                         document.getElementById('journal-text').textContent = moodData.journalText;
                     } else {
                         document.getElementById('journal-text').textContent = '. . .';

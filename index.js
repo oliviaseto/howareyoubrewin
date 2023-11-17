@@ -122,14 +122,13 @@ $(document).ready(function() {
         const day = currentDate.getDate();
         const currentDateKey = `${year}-${month}-${day}`;
 
-        const journalText = document.getElementById('journal').value;
-
         const storedData = localStorage.getItem(currentDateKey);
         if (storedData) {
             const moodData = JSON.parse(storedData);
             if (moodData.mood != null) {
                 selectedMood = moodData.mood;
                 selectedColor = moodData.color;
+                selectedJournalText = moodData.journalText;
             }
             else {
                 selectedColor = getColorForMood(selectedMood);
@@ -138,12 +137,18 @@ $(document).ready(function() {
             // If there is no stored mood, use the newly selected mood and its associated color
             selectedColor = getColorForMood(selectedMood);
         }
-    
+        
+        // if there already exists selected journal text from a previous entry use that
+        // check if journalText is true, if it is overwrite selected journal text from storedData else don't
+        if (document.getElementById('journal').value != '') {
+            selectedJournalText = document.getElementById('journal').value;
+        }
+
         // Store both the selected mood and its color
         const moodData = {
             mood: selectedMood,
             color: selectedColor,
-            journalText: journalText
+            journalText: selectedJournalText
         };
     
         localStorage.setItem(currentDateKey, JSON.stringify(moodData));
